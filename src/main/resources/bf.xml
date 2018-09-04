@@ -5,12 +5,12 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
-		<bean id="myObjectBean" class = 'com.spring.legacy.myObject' >
-		<property name="myProp" value="myProp0" />
+		<bean id="ObjectA_ID" class = 'com.spring.legacy.ObjectA' >
+		<property name="id" value="ObjectA.id" />
 		</bean>
 		
-		<bean id="myObjectBean2" class = 'com.spring.legacy.myObject2' >
-		<constructor-arg name="myProp" value="myProp1" ></constructor-arg>
+		<bean id="ObjectB_ID" class = 'com.spring.legacy.ObjectB' >
+		<constructor-arg name="id" value="ObjectB.id" ></constructor-arg>
 		</bean>
 		
 </beans>

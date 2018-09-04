@@ -10,11 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 /**
  * Handles requests for the application home page.
@@ -49,19 +52,39 @@ public class HomeController {
 		/* Spring bean factory test 00 */
 
 		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("bf.xml"));
-		myObject mo0 = (myObject) bf.getBean("myObjectBean");
-		mo0.toString();
-
-		myObject mo1 = (myObject) bf.getBean("myObjectBean");
+		ObjectA mo0 = (ObjectA) bf.getBean("ObjectA_ID");
+		ObjectA mo1 = (ObjectA) bf.getBean("ObjectA_ID");
 		
-		model.addAttribute("myObject0", mo0.toString());
-		model.addAttribute("myObject1", mo1.toString()); 
+		model.addAttribute("ObjectA0", mo0.toString());
+		model.addAttribute("ObjectA1", mo1.toString()); 
 
-		myObject2 mo00 = (myObject2) bf.getBean("myObjectBean2");
-		myObject2 mo11 = (myObject2) bf.getBean("myObjectBean2");
+		ObjectB mo00 = (ObjectB) bf.getBean("ObjectB_ID");
+		ObjectB mo11 = (ObjectB) bf.getBean("ObjectB_ID");
 		 
-		model.addAttribute("myObject00", mo00.toString());
-		model.addAttribute("myObject11", mo11.toString()); 
+		model.addAttribute("myObjectB0", mo00.toString());
+		model.addAttribute("myObjectB1", mo11.toString()); 
+		
+		
+		
+		ApplicationContext ac = new ClassPathXmlApplicationContext("ac.xml");
+		
+	    mo0 = (ObjectA) ac.getBean("ObjectA_ID");
+		mo1 = (ObjectA) ac.getBean("ObjectA_ID");
+		
+		model.addAttribute("ObjectA0AC", mo0.toString());
+		model.addAttribute("ObjectA1AC", mo1.toString()); 
+
+		 mo00 = (ObjectB) ac.getBean("ObjectB_ID");
+		 mo11 = (ObjectB) ac.getBean("ObjectB_ID");
+		  
+		model.addAttribute("ObjectB0AC", mo00.toString());
+		model.addAttribute("ObjectB1AC", mo11.toString()); 
+		
+		
+		
+		 
+		ObjectC mo3 =  (ObjectC) ac.getBean("ObjectC_ID");
+		model.addAttribute("ObjectCAC",mo3.toString());
 		
 		return "home";
 	}
