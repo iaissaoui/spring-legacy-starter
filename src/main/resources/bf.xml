@@ -8,4 +8,9 @@
 		<bean id="myObjectBean" class = 'com.spring.legacy.myObject' >
 		<property name="myProp" value="myProp0" />
 		</bean>
+		
+		<bean id="myObjectBean2" class = 'com.spring.legacy.myObject2' >
+		<constructor-arg name="myProp" value="myProp1" ></constructor-arg>
+		</bean>
+		
 </beans>

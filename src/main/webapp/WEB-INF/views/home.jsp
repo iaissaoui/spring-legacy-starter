@@ -13,5 +13,11 @@
 <P>  Setter Injection Test 0. </P>
 <P>  myObject0 ${myObject0}. </P>
 <P>  myObject1 ${myObject1}. </P>
+
+<P>  Constructor Injection Test 0. </P>
+<P>  myObject00 ${myObject00}. </P>
+<P>  myObject11 ${myObject11}. </P>
+
+
 </body>
 </html>

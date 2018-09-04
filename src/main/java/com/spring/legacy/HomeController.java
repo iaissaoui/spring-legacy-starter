@@ -53,12 +53,16 @@ public class HomeController {
 		mo0.toString();
 
 		myObject mo1 = (myObject) bf.getBean("myObjectBean");
-
-		mo1.toString();
 		
 		model.addAttribute("myObject0", mo0.toString());
 		model.addAttribute("myObject1", mo1.toString()); 
 
+		myObject2 mo00 = (myObject2) bf.getBean("myObjectBean2");
+		myObject2 mo11 = (myObject2) bf.getBean("myObjectBean2");
+		 
+		model.addAttribute("myObject00", mo00.toString());
+		model.addAttribute("myObject11", mo11.toString()); 
+		
 		return "home";
 	}
 
