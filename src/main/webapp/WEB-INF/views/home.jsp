@@ -10,5 +10,8 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<P>  Setter Injection Test 0. </P>
+<P>  myObject0 ${myObject0}. </P>
+<P>  myObject1 ${myObject1}. </P>
 </body>
 </html>
