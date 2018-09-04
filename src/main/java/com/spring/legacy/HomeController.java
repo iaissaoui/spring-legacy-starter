@@ -46,7 +46,7 @@ public class HomeController {
 			System.out.println(url.getFile());
 		}
 
-		/* Spring bean factory test 0 */
+		/* Spring bean factory test 00 */
 
 		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("bf.xml"));
 		myObject mo0 = (myObject) bf.getBean("myObjectBean");
