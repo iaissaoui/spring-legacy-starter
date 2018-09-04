@@ -86,6 +86,17 @@ public class HomeController {
 		ObjectC mo3 =  (ObjectC) ac.getBean("ObjectC_ID");
 		model.addAttribute("ObjectCAC",mo3.toString());
 		
+		ObjectD mo4 =  (ObjectD) ac.getBean("ObjectD_ID");
+		model.addAttribute("ObjectDAC",mo4.toString());
+		
+		
+		 mo4 =  (ObjectD) ac.getBean("ObjectDAlias1");
+		model.addAttribute("ObjectDAlias1",mo4.toString());
+		 mo4 =  (ObjectD) ac.getBean("ObjectDAlias2");
+		model.addAttribute("ObjectDAlias2",mo4.toString());
+		
+		 
+		
 		return "home";
 	}
 

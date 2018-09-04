@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+		<bean id="ObjectA_ID" class = 'com.spring.legacy.ObjectA' >
+		<property name="id" value="ObjectA.id" />
+		</bean>
+		
+		<bean id="ObjectB_ID" class = 'com.spring.legacy.ObjectB' >
+		<constructor-arg name="id" value="ObjectB.id" ></constructor-arg>
+		</bean>
+		
+		
+		
+		<bean id="ObjectC1_ID" class = 'com.spring.legacy.ObjectC1' >
+		<constructor-arg name="id" value="ObjectC1.id" />
+		</bean>
+		  
+		<bean id="ObjectC_ID" class = 'com.spring.legacy.ObjectC' >
+		<constructor-arg name="id" value="ObjectC.id" ></constructor-arg>
+		<constructor-arg name="ObjectC1" ref="ObjectC1_ID" ></constructor-arg>
+		</bean>
+		
+		<bean id="ObjectD_ID" class = 'com.spring.legacy.ObjectD' >
+		<constructor-arg name="id" value="ObjectD.id" ></constructor-arg>
+		<constructor-arg name="ObjectC1" >
+		<bean class="com.spring.legacy.ObjectC1">
+				<constructor-arg name="id" value="ObjectC1.id.inner" />
+		</bean>
+		</constructor-arg>
+		</bean>
+		
+		
+		<alias name="ObjectD_ID" alias="ObjectDAlias1"/>
+		<alias name="ObjectD_ID" alias="ObjectDAlias2"/>
+</beans>

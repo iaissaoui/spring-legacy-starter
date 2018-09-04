@@ -31,9 +31,15 @@
 <P>    ObjectB1AC  ${ObjectB1AC}. </P>
 
 
-<p>Dependency Injection</p>
+<p>Dependency Injection through Reference in XML</p>
 <p>ObjectCAC ${ObjectCAC}</p> 
  
+ <p>Dependency Injection through Inner Bean</p>
+<p>ObjectDAC ${ObjectDAC}</p>
+
+ <p>Alias Test</p>
+<p>ObjectDAlias1 ${ObjectDAlias1}</p>  
+<p>ObjectDAlias2 ${ObjectDAlias2}</p>  
 
 </body>
 </html>
